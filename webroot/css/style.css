@@ -1,0 +1,157 @@
+/*
+Author: Sonia Anton Llanes
+Created on: 10-marzo-2021
+Last modification: 10-marzo-2021
+CSS Index General Segundo Curso del Módulo Desarrollo de Aplicaciones Web
+*/
+
+
+* { box-sizing: border-box; margin:0px; padding:0px;}
+ul, ol {list-style: none; }
+a{text-decoration: none; color:#000; }
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Tamaño y Posicion de los Elementos con Grid */
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 14% 30% 40% 10%;
+    grid-template-columns: 2% 96% 2%;
+    grid-template-areas:
+        ". header ."
+        ". presentacion ."
+        ". modulos ."
+        ". footer .";
+}
+
+.header, .h1{
+    grid-area: header;
+}
+.presentacion{
+    grid-area: presentacion;
+    justify-self: center;
+}
+.modulos{
+    grid-area: modulos;
+    place-self: center;
+}
+.footer{
+    grid-area: footer;
+}
+
+
+/* Tamaño y Posicion dentro del elemento*/
+.modulos{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modulos>a{
+    width: 24vw;
+}
+.modulos>a article img{
+    width: 100%;
+    height: 28vh;
+}
+.fnav ul li{
+    display: inline-block; 
+    width: 45%;
+}
+@media all and (max-width: 839px){
+    .minMedia{display: inline-block;}
+    .maxMedia{display: none;}
+}
+@media all and (min-width: 840px){
+    .minMedia{display: none;}
+    .maxMedia{display: inline-block;}
+}
+.fnav li img{
+    height: 10vh;
+}
+
+/* Border, margin y padding */
+.modulos>a{
+    margin: 2% ;
+    padding: 2px;
+}
+.footer{
+    border-top: 2px solid #BF2411;
+    margin-top: 3%;
+}
+
+
+/* Estilo background */
+.h1{
+    background-image: url("../images/fondo_header.jpg");
+    background-size: 100%;
+    height: 100%;
+}
+.footer{
+    background: white;
+}
+
+/* Estilo del texto */
+.h1{
+    text-align: center;
+    line-height: 14vh;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 6vw;
+}
+h2{
+    color: #bb1212;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    font-weight: bolder;
+}
+h3{
+    font-family: 'Secular One', sans-serif;
+    font-size: 20px;
+}
+.nombreModulo{
+    font-family: 'Indie Flower', cursive;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: bolder;
+}
+.footer{
+    text-align: center;
+}
+.fnav ul li{
+    vertical-align: middle;
+}
+.ftexto{
+    font-weight: bolder;
+}
+@media all and (max-width: 839px){
+    .ftexto{font-size: 2.5vw;}
+}
+@media all and (min-width: 840px){
+    .ftexto{font-size: 2vw;}
+}
+
+
+/* Hover */
+.menu li:hover{
+    width: 100%;
+    border-bottom: 1px solid #BF2411;
+    border-left: 1px solid #BF2411;
+    background-color: #BF2411;
+    color: white;
+}
+.menu li a:hover{
+    width: 100%;
+    border-bottom: 1px solid #BF2411;
+    border-left: 1px solid #BF2411;
+    background-color: #BF2411;
+    color: white;
+}
+.modulos>a:hover{
+    background: linear-gradient(120deg, #BF2411, white);
+}
+
+
